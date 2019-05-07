@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class ImportCSV {
 
 	public ImportCSV() {};
+	
 	public void readCsv(String file)
     {
 		String jdbcURL = "jdbc:mysql://localhost:3306/INTERVIEW_ASSESSMENT?userSSL=false&serverTimezone=UTC";
