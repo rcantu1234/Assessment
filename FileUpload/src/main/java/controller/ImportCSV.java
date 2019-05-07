@@ -37,6 +37,8 @@ public class ImportCSV {
             String[] rowData = null;
             int i = 0;
             
+            readLines(file);
+
             while((rowData = reader.readNext()) != null)
             {
             	
@@ -74,4 +76,23 @@ public class ImportCSV {
         }
         return true;
     }
+	
+	public void readLines(String file) {
+        Scanner s = null;
+        try {
+            s = new Scanner(new File(file));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        
+        while (s.hasNextLine()) {
+            String[] line = s.nextLine().split(",");
+            for (String element : line) {
+                if (!isBlank(element))
+                    System.out.println(element);
+            }
+
+        }
+	}
+
 }
